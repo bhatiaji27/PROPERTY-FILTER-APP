@@ -1,0 +1,39 @@
+* {
+  font-family: "Montserrat";
+}
+
+.card-div{
+  text-align: center;
+  justify-content: center;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.expenses-filter{
+  margin: 1rem;
+}
+
+.filter-box{
+  width: 90%;
+  background-color: bisque;
+  text-align: center;
+  margin: 2rem auto;
+  transform: perspective(2);
+  border-radius: 20%;
+}
+
+.filter-box h1{
+  font-family: 'Ubuntu';
+  font-weight: bolder
+}
+
+@media (max-width: 500px) {
+  .filter-box {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+}

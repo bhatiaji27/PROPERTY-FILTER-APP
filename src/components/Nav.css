@@ -1,0 +1,12 @@
+.navbar-brand , .nav-link{
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.active{
+    font-weight: bolder;
+}
+
+.modeCont{
+    font-weight: bolder;
+}

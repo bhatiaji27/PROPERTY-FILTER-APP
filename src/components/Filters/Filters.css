@@ -1,0 +1,9 @@
+.expenses-filter{
+    width: 30%;
+    display: inline-block;
+}
+
+.expenses-filter__label{
+    font-weight: bolder;
+    color: grey;
+}
