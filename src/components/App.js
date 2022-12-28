@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Nav from "./Nav";
 import Filters from "./Filters/Filters";
 import LoggIn from "./LoggIn";
@@ -24,6 +24,7 @@ function App() {
     signOut(auth)
       .then(() => {
         setIsLogged(false);
+        localStorage.removeItem('token');
         showAlert("Success","Signed Out successfully");
       })
       .catch((error) => {
@@ -43,6 +44,18 @@ function App() {
     }, 1500);
   };
 
+  useEffect(() => {
+    const localToken = localStorage.getItem('token');
+    if(localToken){
+      setIsLogged(true);
+    }
+    else{
+      setIsLogged(false);
+    }
+  }, []);
+
+  
+
   return (
     <React.Fragment>
       {alert != null && <Alert alert={alert} />}
@@ -61,3 +74,4 @@ function App() {
   );
 }
 export default App;
+
