@@ -32,6 +32,8 @@ function LoggIn({ showAlert,onAuth }) {
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     onAuth();
+    console.log(userCredential);
+    localStorage.setItem('token',userCredential.user.accessToken);
     showAlert("Success","You have been signed In.");
   })
   .catch((error) => {
@@ -40,13 +42,14 @@ function LoggIn({ showAlert,onAuth }) {
   });
   }
 
+
   return (
     <>
     <h1 className="login-head">Welcome to PropFinder Web App</h1>
       <main className="form-signin text-center">
         <div className="formdiv">
 
-          <img src={HomeImg} width="65" height="57"/>
+          <img src={HomeImg} alt="Home" width="65" height="57"/>
           
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -87,3 +90,4 @@ function LoggIn({ showAlert,onAuth }) {
 }
 
 export default LoggIn;
+
